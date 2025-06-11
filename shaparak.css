@@ -1,0 +1,242 @@
+.shaparak {
+    width: 90px;
+    height: 40px;
+    position: relative;
+    top: 15px;
+    left: 280px;
+}
+
+.shetab {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 15px;
+    left: 7px;
+}
+
+.top-text {
+    position: absolute;
+    left: 134px;
+}
+
+.line {
+    width: 250px;
+    height: 10px;
+    background-color: red;
+    position: relative;
+    top: 30px;
+    left: 60px;
+    border-radius: 70px;
+    clip-path: polygon(0% 100%, 10% 90%, 50% 20%, 90% 90%, 100% 100%);
+
+}
+
+.etmo {
+    background-color: rgb(98, 190, 218);
+    color: black;
+    width: 110px;
+    height: 100;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    top: 120px;
+    right: 10px;
+}
+
+.s {
+    position: relative;
+    top: 110px;
+    left: 200px;
+
+    .s1 {
+        position: relative;
+        right: 12px;
+    }
+}
+
+.add {
+    position: relative;
+    top: 140px;
+    left: 145px;
+}
+
+.nokte {
+    width: 350px;
+    border: 1px dashed gray;
+    position: relative;
+    top: 130px;
+}
+
+.mablag {
+    color: green;
+    position: relative;
+    top: 123px;
+    left: 240px;
+}
+
+.gimat {
+    color: green;
+    position: relative;
+    top: 72px;
+    left: 45px;
+}
+
+.ryal {
+    color: green;
+    position: relative;
+    top: 26px;
+    left: 8px;
+}
+
+.etcart {
+    background-color: rgb(98, 190, 218);
+    color: black;
+    width: 110px;
+    height: 100;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    top: 412px;
+    right: 10px;
+}
+
+.time {
+    position: relative;
+    top: 41px;
+    right: 170px;
+}
+
+#timer {
+    position: relative;
+    top: 43px;
+    right: 170px;
+    font-size: larger;
+}
+
+
+
+.cartnum {
+    position: absolute;
+    top: 450px;
+    left: 160px;
+}
+
+.inputone {
+    position: absolute;
+    top: 475px;
+    left: 73px;
+    border-radius: 7px;
+    text-align: center;
+    border: 0.2px solid black;
+    font-size: 17px;
+}
+
+.cvv2{
+    position: absolute;
+    top:520px;
+    left: 165px;
+
+}
+.cvv22{
+    position: absolute;
+    top:526px;
+    left: 112px;
+}
+
+.cvvinput{
+    position: absolute;
+    top:555px;
+    left: 72px;
+    font-size: 17px;
+    border-radius: 7px;
+    border: 0.1px solid black;
+}
+
+.date{
+    position: absolute;
+    top: 600px;
+    left: 135px;
+}
+
+#monthInput{
+    position: absolute;
+    top: 630px;
+    left: 120px;
+   text-align: center;
+}
+
+
+#captcha{
+    position: absolute;
+    top: 750px;
+    left:120px;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+}
+#refreshCaptcha {
+    position: absolute;
+    left: 70px;
+    top: 759px;
+background-color: white;
+border: 0px;
+}
+
+.codeamn{
+    position: absolute;
+    top: 670px;
+    left: 165px;
+}
+
+#captchaInput{
+    position: absolute;
+    top: 700px;
+    left: 85px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.active{
+    position: absolute;
+    top: 700px;
+    left: 30px;
+    background-color: rgb(49, 212, 49);
+}
+.active:active{
+    background-color: green;
+}
+
+.error {
+    color: red;
+    display: none;
+}
+
+.poya{
+    position: absolute;
+    top: 840px;
+    left: 140px;
+}
+
+.poyabtn{
+    position: absolute;
+    top: 875px;
+    left: 60px;
+    width: 250px;
+    height: 35px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 15px;    
+    background-color: white;
+}
+.poyabtn:focus{
+    background-color: rgb(50, 161, 205);
+}
+
+.postpic{
+    position: absolute;
+    top: 874px;
+    left: 157px;
+    width: 33px;
+    
+}

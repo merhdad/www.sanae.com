@@ -1,0 +1,33 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>سامانه اهراز هویت ثنا |Sana Adliran</title>
+    </head>
+    <body>
+        <img src="./pic/gove.png" alt="قوه قضایی">
+
+        <span class="code">شماره ملی</span>
+        <span class="phone">شماره همراه</span>
+        <span class="name">نام و نام خانوادگی</span>
+
+    
+        <form action="" method="get">
+        <input type="number"  id="input-code" required class="input-code"><br><br><br>
+        <input type="number"  id="input-phone" required placeholder="+98"  class="input-phone"><br><br><br>
+        <input type="text"  id="input-name" required class="input-name"><br><br>
+        
+        <a href="./enter.html">مرحله بعد</a>
+
+        <script>
+            let codeInput = document.getElementById("input-code");
+        codeInput.addEventListener("input", function() {
+                localStorage.setItem("codePhone", codeInput.value); // ذخیره شماره تلفن
+                console.log("شماره ذخیره شد:", codeInput.value);
+            });
+        </script>
+        
+    </body>
+    </html>

@@ -1,0 +1,65 @@
+img {
+    width: 200px;
+    height: 300px;
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.input-code {
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    height: 20px;
+    width: 230px;
+}
+
+.input-phone {
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    height: 20px;
+    width: 230px;
+}
+
+.input-name {
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    height: 20px;
+    width: 230px;
+}
+
+.code {
+    position: relative;
+    left: 60px;
+    bottom: 5px;
+}
+
+.phone {
+    position: relative;
+    top: 77px;
+    left: 124px;
+    bottom: 5px;
+}
+
+.name {
+    position: relative;
+    left: 197px;
+    top: 160px;
+    bottom: 6px;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+    background-color: rgb(49, 49, 255);
+    width: 230px;
+    height: 35px;
+    border-radius: 15px;
+    border: 1px solid rgb(49, 49, 255);
+    display: block;
+    margin: auto;
+}

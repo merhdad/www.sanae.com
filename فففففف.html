@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کد امنیتی CAPTCHA</title>
+    <style>
+        #captcha-container {
+            display: flex;
+            align-items: center;
+        }
+        #refreshCaptcha {
+            margin-right: 10px; /* جابه‌جایی دکمه به سمت چپ */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="captcha-container">
+        <button id="refreshCaptcha" onclick="generateCaptcha()">تولید مجدد</button>
+        <canvas id="captcha"></canvas>
+    </div>
+
+    <script>
+        function generateCaptcha() {
+            const canvas = document.getElementById("captcha");
+            const ctx = canvas.getContext("2d");
+            canvas.width = 150;
+            canvas.height = 50;
+
+            // پس‌زمینه
+            ctx.fillStyle = "#f4f4f4";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // متن تصادفی برای CAPTCHA
+            ctx.font = "bold 20px Arial";
+            ctx.fillStyle = "#000";
+            const captchaText = Math.random().toString(36).substr(2, 6).toUpperCase();
+            ctx.fillText(captchaText, 20, 30);
+
+            // ذخیره مقدار کپچا
+            canvas.setAttribute("data-captcha", captchaText);
+        }
+
+        // اجرای اولیه
+        generateCaptcha();
+    </script>
+
+</body>
+</html>

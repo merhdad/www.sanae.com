@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .pm {
+            position: relative;
+            left: 50px;
+            top: 180px;
+        }
+
+        .mtn {
+            position: relative;
+            left: 110px;
+            top: 210px;
+        }
+
+        input {
+         display: block;
+         margin: auto;
+            width: 200px;
+            height: 30px;
+            border-radius: 12px;
+            position: relative;
+            top: 200px;
+        }
+
+        button {
+            text-align: center;
+            padding-top: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: larger;
+            background-color: rgb(49, 49, 255);
+            width: 250px;
+            height: 50px;
+            border-radius: 15px;
+            border: 1px solid rgb(49, 49, 255);
+            display: block;
+            margin: auto;
+            position: relative;
+            top: 250px;
+        }
+    </style>
+
+    <p class="pm">جهت ورود به سامانه کد ملی خود را وارد کنید</p>
+
+    <p class="mtn">کد ملی خود را وارد کنید</p>
+
+    
+    <form action="./pay.html" onsubmit="sendData(event)">
+        <input type="text" id="input-text" required maxlength="11">
+        <span id="error-message" style="color: red; display: none;">لطفاً این فیلد را پر کنید!</span>
+        <button type="submit">ارسال</button>
+    </form>
+    
+    <script>
+        function sendData(event) {
+            event.preventDefault(); // جلوگیری از ارسال فرم به‌صورت عادی
+            let code = document.getElementById("input-text").value;
+            if (code) {
+                window.location.href = "./pay.html?number=" + encodeURIComponent(code);
+            } else {
+                alert("لطفاً شماره خود را وارد کنید!");
+            }
+        }
+    </script>
+    
+</body>
+
+</html>
